@@ -73,7 +73,7 @@ class App:
     _quarter_circle_descriptor = 0
     canvas_size_error = 3
     amount_points = 100
-    multiplicity = 10000
+    multiplicity = 1000
     coord_y_for_table = 70
 
     def __init__(self):
