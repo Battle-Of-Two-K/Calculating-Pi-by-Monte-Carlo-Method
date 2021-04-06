@@ -20,7 +20,7 @@ class RandomPoints:
     def draw(self):
         for current_point in range(self.amount):
             coords = self.random_coords
-            self.canvas_points_ids.append(self.canvas.create_oval(*coords, coords[0] + self.radius,
+            self.canvas_points_ids.append(self.canvas.create_rectangle(*coords, coords[0] + self.radius,
                                                                   coords[1] + self.radius, **self.points_options))
             self.drawed_points += 1
 
@@ -78,6 +78,7 @@ class App:
 
     def __init__(self):
         self.root = Tk()
+        self.root.resizable(width=False, height=False)
 
         # Полотно с математической моделью:
         self.animation_canvas = Canvas(self.root, **self.canvas_animation_options)
@@ -85,7 +86,7 @@ class App:
 
         # Полотно с исследуемыми данными:
         self.data_canvas = Canvas(self.root, **self.canvas_data_options)
-        self.data_canvas.pack()
+        self.data_canvas.pack(side='top')
 
         # Полотно с диаграммой:
         self.chart_canvas = Canvas(self.root, **self.canvas_chart_options)
